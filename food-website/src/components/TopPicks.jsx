@@ -20,7 +20,7 @@ const TopPicks = () => {
                     <p className="px-2">{item.title}</p>
                     <button className="border-dotted border-white text-white mx-2 absolute bottom-4">
                       Add To Cart
-                    </button> 
+                    </button>
                     <span>{item.price}</span>
                   </div>
                   <img
