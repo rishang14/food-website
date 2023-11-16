@@ -10,5 +10,5 @@
 
 ![Local Image](../food-website/src/yumseatscafe.netlify.app_(iPad%20Mini).png)   
  
- ![live link](https://yumseatscafe.netlify.app)  
+ ![Link Yum eats](https://yumseatscafe.netlify.app)  
 
