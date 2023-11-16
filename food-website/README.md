@@ -1,6 +1,8 @@
 # React + Vite  
  
-#Food wesbite 
+#Food wesbite  
+ 
+ You can check it out live [here](https://yumseatscafe.netlify.app/)
  
  Welcome to my awesome project   
 
@@ -10,5 +12,5 @@
 
 ![Local Image](../food-website/src/yumseatscafe.netlify.app_(iPad%20Mini).png)   
  
- ![Link Yum eats](https://yumseatscafe.netlify.app)  
+ 
 
