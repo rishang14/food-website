@@ -3,7 +3,10 @@ import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { BsFillCartFill, BsPerson } from "react-icons/bs";
 import { TbTruckReturn } from "react-icons/tb";
 import { FaGoogleWallet } from "react-icons/fa";
-import { MdHelp, MdOutlineFavorite } from "react-icons/md";
+import { MdHelp, MdOutlineFavorite } from "react-icons/md";    
+import {Link} from "react-router-dom";
+
+
 
 const TopNav = () => {
   const [sideNav, setsideNav] = useState(false);
@@ -13,8 +16,8 @@ const TopNav = () => {
         <div onClick={() => setsideNav(!sideNav)} className="cursor-pointer">
           <AiOutlineMenu size={25} />
         </div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
-          Yum<span className="font-bold">Eats</span>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2 cursor-pointer">
+        <Link to={"/"} > Yum<span className="font-bold">Eats</span > </Link>
         </h1>
         <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]">
           <p className="bg-orange-700 text-white rounded-full p-2 text-bold">
@@ -55,25 +58,26 @@ const TopNav = () => {
           size={25}
           onClick={() => setsideNav(!sideNav)}
         />
-        <h2 className="text-2xl p-4">
+        <h2 className="text-2xl p-4 cursor-pointer">
           {" "}
-          Yum <span className="text-orange-700  font-bold">Eats</span>
+        <Link to={"/"}  onClick={() => setsideNav(!sideNav)}> Yum <span className="text-orange-700  font-bold">Eats</span> </Link>  
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-900">
             <li className="text-xl p-4 flex">
               <BsPerson
                 size={25}
-                className="mr-4 text-white  bg-black rounded-full"
+                className="mr-4 text-white  bg-black rounded-full cursor-pointer" 
+                
               />
-              My Account
+            <Link to={"/myaccount"}  onClick={() => setsideNav(!sideNav)}> My Account</Link>
             </li>
             <li className=" text-xl p-4 flex">
               <TbTruckReturn
                 size={25}
-                className="mr-4 text-white  bg-black rounded-full"
+                className="mr-4 text-white  bg-black rounded-full cursor-pointer"
               />
-              Delievry
+            <Link to={"/mydelivery"}  onClick={() => setsideNav(!sideNav)}>Delievry</Link>
             </li>
             <li className=" text-xl p-4 flex">
               <MdOutlineFavorite
@@ -98,8 +102,10 @@ const TopNav = () => {
             </li>
           </ul>
         </nav>
-      </div>
-    </div>
+      </div> 
+     
+    </div> 
+
   );
 };
 
