@@ -6,7 +6,15 @@ import { FaGoogleWallet } from "react-icons/fa";
 import { MdHelp, MdOutlineFavorite } from "react-icons/md";
 
 const TopNav = () => {
-  const [sideNav, setsideNav] = useState(false);
+  const [sideNav, setsideNav] = useState(false); 
+  const [searchMeal,SetSearchMeal]=useState("")  
+   const handleinputChange=(e)=>{
+    SetSearchMeal(e.target.value)
+   }
+   const handlechange=(e)=>{
+     e.preventDefault(); 
+     console.log(searchMeal)
+   }
   return (
     <div className="max-w-[1520] mx-auto flex justify-between items-center p-4">
       <div className="flex items-center">
@@ -25,11 +33,16 @@ const TopNav = () => {
       </div>
       <div className="bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]">
         <AiOutlineSearch size={25} />
-        <input
+         <form onSubmit={handlechange}>
+         <input
           type="text"
           className="bg-transparent p-2 w-full focus:outline-none"
-          placeholder="search meal"
-        />
+          placeholder="search meal"   
+          value={searchMeal} 
+          onChange={handleinputChange}
+        /> 
+         </form>
+        
       </div>
       <button className="bg-orange-700 text-white hidden md:flex items-center pu-2 rounded-full ">
         <BsFillCartFill />

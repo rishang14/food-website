@@ -1,8 +1,14 @@
-# React + Vite
+# React + Vite  
+ 
+#Food wesbite 
+ 
+ Welcome to my awesome project   
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ### overview 
+  
+  Here is the screen  shot of the project 
 
-Currently, two official plugins are available:
+![Local Image](../food-website/src/yumseatscafe.netlify.app_(iPad%20Mini).png)   
+ 
+ ![live link](https://yumseatscafe.netlify.app)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
