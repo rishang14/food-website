@@ -4,21 +4,15 @@ import { BsFillCartFill, BsPerson } from "react-icons/bs";
 import { TbTruckReturn } from "react-icons/tb";
 import { FaGoogleWallet } from "react-icons/fa";
 import { MdHelp, MdOutlineFavorite } from "react-icons/md";    
-import {Link} from "react-router-dom";
+import {Link,Outlet} from "react-router-dom";
 
 
 
 const TopNav = () => {
-  const [sideNav, setsideNav] = useState(false); 
-  const [searchMeal,SetSearchMeal]=useState("")  
-   const handleinputChange=(e)=>{
-    SetSearchMeal(e.target.value)
-   }
-   const handlechange=(e)=>{
-     e.preventDefault(); 
-     console.log(searchMeal)
-   }
-  return (
+  const [sideNav, setsideNav] = useState(false);
+  return ( 
+    <>
+  
     <div className="max-w-[1520] mx-auto flex justify-between items-center p-4">
       <div className="flex items-center">
         <div onClick={() => setsideNav(!sideNav)} className="cursor-pointer">
@@ -36,15 +30,13 @@ const TopNav = () => {
       </div>
       <div className="bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]">
         <AiOutlineSearch size={25} />
-         <form onSubmit={handlechange}>
+        
          <input
           type="text"
           className="bg-transparent p-2 w-full focus:outline-none"
           placeholder="search meal"   
-          value={searchMeal} 
-          onChange={handleinputChange}
         /> 
-         </form>
+         
         
       </div>
       <button className="bg-orange-700 text-white hidden md:flex items-center pu-2 rounded-full ">
@@ -117,8 +109,9 @@ const TopNav = () => {
         </nav>
       </div> 
      
-    </div> 
-
+    </div>  
+    <Outlet/>
+    </>
   );
 };
 
