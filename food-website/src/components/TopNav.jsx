@@ -4,13 +4,15 @@ import { BsFillCartFill, BsPerson } from "react-icons/bs";
 import { TbTruckReturn } from "react-icons/tb";
 import { FaGoogleWallet } from "react-icons/fa";
 import { MdHelp, MdOutlineFavorite } from "react-icons/md";    
-import {Link} from "react-router-dom";
+import {Link,Outlet} from "react-router-dom";
 
 
 
 const TopNav = () => {
   const [sideNav, setsideNav] = useState(false);
-  return (
+  return ( 
+    <>
+  
     <div className="max-w-[1520] mx-auto flex justify-between items-center p-4">
       <div className="flex items-center">
         <div onClick={() => setsideNav(!sideNav)} className="cursor-pointer">
@@ -104,8 +106,9 @@ const TopNav = () => {
         </nav>
       </div> 
      
-    </div> 
-
+    </div>  
+    <Outlet/>
+    </>
   );
 };
 
