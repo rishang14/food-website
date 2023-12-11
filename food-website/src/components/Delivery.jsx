@@ -9,7 +9,7 @@ const Delivery = () => {
           className=" w-[550px]  mx-auto my-4"
           src="https://res.cloudinary.com/ehizeex-shop/image/upload/v1672676822/NetflixApp/FC_two_phones.6ec9a842f905769677f9_m91off.webp"
         />
-        <div className="flex flex-col justify-center flex-wrap w-[350px] md:w-[100%]">
+        <div className="flex flex-col justify-center flex-wrap w-[350px] md:w-[100%] m-auto">
           <p className="text-[#00df9a] font-bold sm:flex sm:justify-center">
             Get The App
           </p>

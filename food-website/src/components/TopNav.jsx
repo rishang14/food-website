@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose ,AiOutlineLogin,} from "react-icons/ai";
 import { BsFillCartFill, BsPerson } from "react-icons/bs";
 import { TbTruckReturn } from "react-icons/tb";
 import { FaGoogleWallet } from "react-icons/fa";
@@ -9,7 +9,8 @@ import {Link,Outlet} from "react-router-dom";
 
 
 const TopNav = () => {
-  const [sideNav, setsideNav] = useState(false);
+  const [sideNav, setsideNav] = useState(false); 
+  const [isloggedIn,setIsLoggedIn]=useState(false)
   return ( 
     <>
   
@@ -103,7 +104,9 @@ const TopNav = () => {
               Help
             </li>
           </ul>
-        </nav>
+        <Link to={"/SignIn"} className="absolute bottom-10 left-[30%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignIn</Link>
+        <Link to={"/SignUp"} className="absolute bottom-10 right-[20%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignUp</Link>
+        </nav> 
       </div> 
      
     </div>  

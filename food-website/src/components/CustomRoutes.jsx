@@ -1,9 +1,11 @@
 import React from 'react'; 
 import {Routes,Route} from "react-router-dom" 
-import MyAccount from './MyAccount';  
+// import MyAccount from './MyAccount';  
 import TopNav from './TopNav';
 import Home from './Home'; 
-import DeliveryDeatils from './DeliveryDeatils';
+import DeliveryDeatils from './DeliveryDeatils'; 
+import SignIn from './login';
+import SignUp from './SignUp';
 
 const CustomRoutes = () => {
   return (
@@ -11,10 +13,11 @@ const CustomRoutes = () => {
     <Routes>   
       <Route path='/' element={<TopNav/>}>
         <Route index element={<Home/>}/>
-        <Route path='myaccount' element={<MyAccount/>}/> 
+        {/* <Route path='myaccount' element={<MyAccount/>}/>  */}
         <Route path='mydelivery' element={<DeliveryDeatils/>}/> 
       </Route>
-
+      <Route path='/SignIn' element={<SignIn/>}/>
+      <Route path='/SignUp' element={<SignUp/>}/>
 
     </Routes>
    </>
