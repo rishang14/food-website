@@ -10,7 +10,7 @@ import {Link,Outlet} from "react-router-dom";
 
 const TopNav = () => {
   const [sideNav, setsideNav] = useState(false); 
-  const [isloggedIn,setIsLoggedIn]=useState(false)
+  const [isloggedIn,setIsLoggedIn]=useState(true);
   return ( 
     <>
   
@@ -67,14 +67,17 @@ const TopNav = () => {
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-900">
-            <li className="text-xl p-4 flex">
+            {
+              isloggedIn ?<li className="text-xl p-4 flex">
               <BsPerson
                 size={25}
                 className="mr-4 text-white  bg-black rounded-full cursor-pointer" 
                 
               />
             <Link to={"/myaccount"}  onClick={() => setsideNav(!sideNav)}> My Account</Link>
-            </li>
+            </li> 
+            :<></>
+            }
             <li className=" text-xl p-4 flex">
               <TbTruckReturn
                 size={25}
@@ -104,8 +107,8 @@ const TopNav = () => {
               Help
             </li>
           </ul>
-        <Link to={"/SignIn"} className="absolute bottom-10 left-[30%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignIn</Link>
-        <Link to={"/SignUp"} className="absolute bottom-10 right-[20%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignUp</Link>
+       {isloggedIn ? <Link to={"/SignIn"} className="absolute bottom-10 left-[30%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignIn</Link>
+        :<Link to={"/SignUp"} className="absolute bottom-10 left-[30%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignUp</Link>}
         </nav> 
       </div> 
      

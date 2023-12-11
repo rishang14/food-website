@@ -6,7 +6,7 @@ const Delivery = () => {
       </h3>
       <div className="lg:w-[1240px] mx-auto lg:flex flex-row ">
         <img
-          className=" w-[550px]  mx-auto my-4"
+          className=" w-[550px]  mx-auto my-4 md:w-[500px]"
           src="https://res.cloudinary.com/ehizeex-shop/image/upload/v1672676822/NetflixApp/FC_two_phones.6ec9a842f905769677f9_m91off.webp"
         />
         <div className="flex flex-col justify-center flex-wrap w-[350px] md:w-[100%] m-auto">
