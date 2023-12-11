@@ -10,7 +10,7 @@ import {Link,Outlet} from "react-router-dom";
 
 const TopNav = () => {
   const [sideNav, setsideNav] = useState(false); 
-  const [isloggedIn,setIsLoggedIn]=useState(true);
+  const [isloggedIn,setIsLoggedIn]=useState(false);
   return ( 
     <>
   
@@ -31,7 +31,8 @@ const TopNav = () => {
       </div>
       <div className="bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]">
         <AiOutlineSearch size={25} />
-        <input
+        
+         <input
           type="text"
           className="bg-transparent p-2 w-full focus:outline-none"
           placeholder="search meal"

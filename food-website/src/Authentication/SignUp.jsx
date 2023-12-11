@@ -1,7 +1,16 @@
- import {Link} from "react-router-dom"
-const SignUp = () => {
+ import {Link} from "react-router-dom" 
+ import backgroundImg from "./signUp.jpg"
+const SignUp = () => { 
+  const img = {
+    backgroundImage: `url(${backgroundImg})`,
+    backgroundSize: "cover",
+    backgroundPosition: 'center center', 
+    backgroundRepeat: 'no-repeat',
+
+  };
   return (
-    <>
+    <> 
+    <div className="h-screen" style={img}>
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
     <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2 cursor-pointer">
         <Link to={"/"} > Yum<span className="font-bold">Eats</span > </Link>
@@ -39,6 +48,7 @@ const SignUp = () => {
               </form>
           </div>
       </div>
+  </div> 
   </div>
     </>
   )
