@@ -36,11 +36,13 @@ const TopNav = () => {
           className="bg-transparent p-2 w-full focus:outline-none"
           placeholder="search meal"
         />
-      </div>
+      </div> 
+      <Link to={"/cart"}>
       <button className="bg-orange-700 text-white hidden md:flex items-center pu-2 rounded-full ">
         <BsFillCartFill />
         Cart
-      </button>
+      </button> 
+      </Link>
       {sideNav ? (
         <div
           className="bg-black/60  fixed w-full h-screen z-10 top-0 left-0 "
@@ -107,7 +109,7 @@ const TopNav = () => {
               Help
             </li>
           </ul>
-       {isloggedIn ? <Link to={"/SignIn"} className="absolute bottom-10 left-[30%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignIn</Link>
+       {isloggedIn ? <Link to={"/SignIn"} className="absolute bottom-10 left-[30%] bg-gray-300 rounded-xl p-4 text-[14px] text-orange-500 hover:underline"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignIn</Link>
         :<Link to={"/SignUp"} className="absolute bottom-10 left-[30%] bg-gray-200 rounded-2xl p-3 text-[14px] text-orange-700"> <AiOutlineLogin size={25} className="cursor-pointer"/>SignUp</Link>}
         </nav> 
       </div> 

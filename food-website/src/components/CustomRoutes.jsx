@@ -6,6 +6,7 @@ import Home from './Home';
 import DeliveryDeatils from './DeliveryDeatils'; 
 import SignIn from '../Authentication/SignIn';
 import SignUp from '../Authentication/SignUp';
+import Cart from './Cart';
 
 const CustomRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const CustomRoutes = () => {
         <Route index element={<Home/>}/>
         <Route path='myaccount' element={<MyAccount/>}/> 
         <Route path='mydelivery' element={<DeliveryDeatils/>}/> 
+        <Route path='cart' element={<Cart/>}/>
       </Route>
       <Route path='/SignIn' element={<SignIn/>}/>
       <Route path='/SignUp' element={<SignUp/>}/>
