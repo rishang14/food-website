@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import backgroundImg from "./signin.jpg";
+import backgroundImg from "./signin.jpg"; 
+import { signInWithGooglePopup } from "../utlis/firebase/firebase";
 const SignIn = () => {
   const img = {
     backgroundImage: `url(${backgroundImg})`,
@@ -10,7 +11,11 @@ const SignIn = () => {
     justifyContent: 'center',
     alignItems: 'center',
 
-  };
+  }; 
+  const loginWithGoogle= async()=>{
+    const response= await signInWithGooglePopup(); 
+    console.log(response)
+  }
   return (
     <>
       <div className="lg:h-screen h-[100vh] sm:h-[100vh]" style={img}>
@@ -85,7 +90,13 @@ const SignIn = () => {
                     Sign in
                   </button>
                 </div>
-              </form>
+              </form> 
+              <button
+            onClick={loginWithGoogle}
+            className='flex w-[50%] justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+          >
+            SignIN with Google
+          </button>
 
               <p className="mt-10 text-center text-sm text-gray-500">
                 New User?
