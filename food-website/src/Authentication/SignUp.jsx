@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import backgroundImg from "./signUp.jpg"; 
-import { createAuthUserWithEmailAndPassword,createUserWithAuth } from "../utlis/firebase/firebase";
+import backgroundImg from "./signUp.jpg";
+import {
+  createAuthUserWithEmailAndPassword,
+  createUserWithAuth,
+} from "../utlis/firebase/firebase";
 
 const deaultFormFeild = {
   displayName: "",
@@ -11,37 +14,38 @@ const deaultFormFeild = {
 };
 const SignUp = () => {
   const [fromFeild, setFormFeild] = useState(deaultFormFeild);
-  const { displayName, email, password, confirmPassword } = fromFeild; 
+  const { displayName, email, password, confirmPassword } = fromFeild;
   const img = {
     backgroundImage: `url(${backgroundImg})`,
     backgroundSize: "cover",
     backgroundPosition: "center center",
     backgroundRepeat: "no-repeat",
-  }; 
-  const resetFormFeild=()=>{ 
-  setFormFeild(deaultFormFeild)
-  }
-  const handleChange = (e) => { 
-    const {name,value} = e.target; 
-    setFormFeild({...fromFeild,[name]:value})
-  };  
-  const handleSubmit=async(e)=>{
-      e.preventDefault();  
-      if(password !== confirmPassword){
-        alert('Please enter password and confirm password correctly'); 
-        return;
-      } 
-      try { 
-          const {user}=await createAuthUserWithEmailAndPassword(email,password); 
-            console.log(user)
-         await createUserWithAuth(user,{displayName});   
-         resetFormFeild()
-      }catch(error){ 
-        alert(error)
-        
-      }
-
-  }
+  };
+  const resetFormFeild = () => {
+    setFormFeild(deaultFormFeild);
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormFeild({ ...fromFeild, [name]: value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Please enter password and confirm password correctly");
+      return;
+    }
+    try {
+      const { user } = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+      console.log(user);
+      await createUserWithAuth(user, { displayName });
+      resetFormFeild();
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   return (
     <>
